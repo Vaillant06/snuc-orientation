@@ -105,16 +105,6 @@ const [cloudinaryCloudName, setCloudinaryCloudName] = useState('');
     }
   }, [email]);
 
-  const handleReset = useCallback(() => {
-    setCurrentVideoId(1);
-    setCompletedVideos(new Set());
-    setQuizScores({});
-    localStorage.removeItem('completedVideos');
-    localStorage.removeItem('quizScores');
-    localStorage.removeItem('currentVideoId');
-    localStorage.removeItem('email');
-  }, []);
-
   if (!email || !voicePreference) {
     return (
       <VoiceSelector
@@ -136,7 +126,6 @@ const [cloudinaryCloudName, setCloudinaryCloudName] = useState('');
         onQuizPassed={handleQuizPassed}
         voicePreference={voicePreference}
         onVoiceChange={handleVoiceChange}
-        onReset={handleReset}
         cloudName={cloudinaryCloudName}
       />
     </div>

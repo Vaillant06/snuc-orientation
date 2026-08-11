@@ -4,7 +4,7 @@ import { getVideoUrl } from '../constants/VideoContent.js';
 
 function VideoPlayer({
   videos, currentVideoId, onSelectVideo, isUnlocked, completedVideos,
-  onQuizPassed, voicePreference, onVoiceChange, onReset, cloudName,
+  onQuizPassed, voicePreference, onVoiceChange, cloudName,
 }) {
   const [videoEnded, setVideoEnded] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -60,10 +60,6 @@ function VideoPlayer({
             )
           })}
         </div>
-        <hr className="mt-auto" />
-        <button className="btn btn-outline-danger btn-sm w-100" onClick={onReset}>
-          <i className="bi bi-arrow-counterclockwise me-1"></i>Reset Progress
-        </button>
       </div>
 
       <div className={`sidebar-backdrop ${sidebarOpen ? 'show' : ''}`} onClick={() => setSidebarOpen(false)} />
